@@ -7,29 +7,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>🌏World Clock⏰</h1>
-    <select>
-      <option value="">Current Location</option>
-      <option value="">Vancouver</option>
-      <option value="">Buenos Aires</option>
-      <option value="">Madrid</option>
-      <option value="">Beijing</option>
-      <option value="">Auckland</option>
-    </select>
-    <div class="CdmxDataDisplay">
-      <div class="CityName">
-        CDMX
-        <div class="CityDate">Thursday May 20th 2025</div>
+    <div class="MainContainer">
+      <h1>🌏World Clock⏰</h1>
+      <select>
+        <option value="">Select a city...</option>
+        <option value="">Current Location</option>
+        <option value="">Vancouver</option>
+        <option value="">Buenos Aires</option>
+        <option value="">Madrid</option>
+        <option value="">Beijing</option>
+        <option value="">Auckland</option>
+      </select>
+      <div id="CitiesDisplay">
+        <div class="Cities">
+          <div>
+            <h2>Mexico City</h2>
+            <div class="CityDate">Thursday May 20th 2025</div>
+          </div>
+          <div class="CityTime">3:16:37 <small>PM</small></div>
+        </div>
+        <div class="Cities">
+          <div>
+            <h2>Oslo</h2>
+            <div class="CityDate">Thursday May 20th 2025</div>
+          </div>
+          <div class="CityTime">3:16:37 <small>PM</small></div>
+        </div>
       </div>
-      <div CityTime>3:16:37 <small>PM</small></div>
     </div>
-    <div class="OsloDataDisplay">
-      <div class="CityName">
-        Oslo
-        <div class="CityDate">Thursday May 20th 2025</div>
-      </div>
-      <div CityTime>3:16:37 <small>PM</small></div>
-    </div>
+
     <footer>
       This project was coded by
       <a href="https://github.com/RparraTZ?tab=repositories" target="_blank"

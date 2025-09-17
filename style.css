@@ -1,1 +1,54 @@
-
+body {
+  background-color: #f9f7fe;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+.MainContainer {
+  background-color: #ffffff;
+  display: block;
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+h1 {
+  margin-top: 1px;
+}
+select {
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 7px;
+}
+.Cities {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgb(176, 176, 176);
+  margin: 10px 0;
+  padding: 30px 0;
+}
+.Cities:last-child {
+  border-bottom: none;
+}
+h2 {
+  margin-bottom: 5px;
+}
+.CityDate {
+  opacity: 0.7;
+}
+.CityTime {
+  font-size: 48px;
+  font-weight: bold;
+}
+small {
+  font-size: 24px;
+  line-height: 48px;
+  vertical-align: middle;
+}
+footer {
+  font-size: 16px;
+  text-align: center;
+}
