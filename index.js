@@ -1,4 +1,4 @@
-function getMexicoData() {
+function updateTimeData() {
   let MXcity = document.getElementById("mexico-city");
   let MXcityDate = MXcity.querySelector(".CityDate");
   let MXcityTime = MXcity.querySelector(".CityTime");
@@ -41,13 +41,13 @@ function getSelectionData(event) {
           <div class="CityTime">${cityTime}</div>
         </div>
        </div>
-       <a href="/">Back to home</a>`;
+         <a href="/">Back to home</a>`;
   setTimeout(function () {
     getSelectionData(event);
   }, 1000);
 }
 let updateInterval;
-updateInterval = setInterval(getMexicoData, 1000);
+updateInterval = setInterval(updateTimeData, 1000);
 
 let citiesSelectionElement = document.getElementById("cities");
 citiesSelectionElement.addEventListener("change", getSelectionData);
