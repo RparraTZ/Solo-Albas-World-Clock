@@ -1,27 +1,53 @@
 function getMexicoData() {
-  let city = document.getElementById("mexico-city");
-  let cityName = city.querySelector(".CityName");
-  let cityDate = city.querySelector(".CityDate");
-  let cityTime = city.querySelector(".CityTime");
-  cityDate.innerHTML = moment()
+  let MXcity = document.getElementById("mexico-city");
+  let MXcityDate = MXcity.querySelector(".CityDate");
+  let MXcityTime = MXcity.querySelector(".CityTime");
+  MXcityDate.innerHTML = moment()
     .tz("America/Mexico_City")
     .format("dddd MMMM Do YYYY");
-  cityTime.innerHTML = moment()
+  MXcityTime.innerHTML = moment()
     .tz("America/Mexico_City")
     .format("h:mm:ss[<small>] A[</small]");
-}
-function getOsloData() {
-  let city = document.getElementById("oslo");
-  let cityName = city.querySelector(".CityName");
-  let cityDate = city.querySelector(".CityDate");
-  let cityTime = city.querySelector(".CityTime");
-  cityDate.innerHTML = moment().tz("Europe/Oslo").format("dddd MMMM Do YYYY");
-  cityTime.innerHTML = moment()
+
+  let OsloCity = document.getElementById("oslo");
+  let OsloCityDate = OsloCity.querySelector(".CityDate");
+  let OsloCityTime = OsloCity.querySelector(".CityTime");
+  OsloCityDate.innerHTML = moment()
+    .tz("Europe/Oslo")
+    .format("dddd MMMM Do YYYY");
+  OsloCityTime.innerHTML = moment()
     .tz("Europe/Oslo")
     .format("h:mm:ss[<small>] A[</small]");
 }
 
-setInterval(getMexicoData, 1000);
-setInterval(getOsloData, 1000);
+function getSelectionData(event) {
+  clearInterval(updateInterval);
+  let selectedCity = event.target.value;
+  if (selectedCity === "current") {
+    selectedCity = moment.tz.guess();
+  }
+  let displayCityInfo = document.getElementById("CitiesDisplay");
+  let cityName = selectedCity.replace("_", " ").split("/")[1];
+  let cityDate = moment().tz(selectedCity).format("dddd MMMM Do YYYY");
+  let cityTime = moment()
+    .tz(selectedCity)
+    .format("h:mm:ss[<small>] A[</small]");
+  displayCityInfo.innerHTML = `<div id="CitiesDisplay">
+        <div class="Cities">
+          <div>
+            <h2 class="CityName">${cityName}</h2>
+            <div class="CityDate">${cityDate}</div>
+          </div>
+          <div class="CityTime">${cityTime}</div>
+        </div>
+       </div>
+       <a href="/">Back to home</a>`;
+  setTimeout(function () {
+    getSelectionData(event);
+  }, 1000);
+}
+let updateInterval;
+updateInterval = setInterval(getMexicoData, 1000);
+
 let citiesSelectionElement = document.getElementById("cities");
 citiesSelectionElement.addEventListener("change", getSelectionData);
