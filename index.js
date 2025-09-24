@@ -7,7 +7,7 @@ function updateTimeData() {
     .format("dddd MMMM Do YYYY");
   MXcityTime.innerHTML = moment()
     .tz("America/Mexico_City")
-    .format("h:mm:ss[<small>] A[</small]");
+    .format("h:mm:ss[<small>] A[</small>]");
 
   let OsloCity = document.getElementById("oslo");
   let OsloCityDate = OsloCity.querySelector(".CityDate");
@@ -17,7 +17,7 @@ function updateTimeData() {
     .format("dddd MMMM Do YYYY");
   OsloCityTime.innerHTML = moment()
     .tz("Europe/Oslo")
-    .format("h:mm:ss[<small>] A[</small]");
+    .format("h:mm:ss[<small>] A[</small>]");
 }
 
 function getSelectionData(event) {
