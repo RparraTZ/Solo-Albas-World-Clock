@@ -31,8 +31,8 @@ function getSelectionData(event) {
   let cityDate = moment().tz(selectedCity).format("dddd MMMM Do YYYY");
   let cityTime = moment()
     .tz(selectedCity)
-    .format("h:mm:ss[<small>] A[</small]");
-  displayCityInfo.innerHTML = `<div>
+    .format("h:mm:ss[<small>] A[</small>]");
+  displayCityInfo.innerHTML = `
         <div class="Cities">
           <div>
             <h2 class="CityName">${cityName}</h2>
@@ -40,7 +40,7 @@ function getSelectionData(event) {
           </div>
           <div class="CityTime">${cityTime}</div>
         </div>
-        </div>
+      
        
          <a href="/">Back to home</a>`;
   setTimeout(function () {
